@@ -5,7 +5,14 @@ stub (meta-refresh + `location.replace`) pointing at `/create-pantoken-app.md`, 
 skill content — a plain-text `.html` root previously confused agent fetch tools that ran the page
 through an HTML-to-text conversion pass and mangled the embedded markdown.
 
-`index.html` and `create-pantoken-app.md` are generated from
+`404.html` is a second, raw copy of the skill: GitHub Pages serves it for any unmatched path
+(including `/`, since there's no Jekyll `permalink` processing — this repo is `.nojekyll`), so a
+plain non-rendering `GET /` still gets the content immediately instead of the redirect stub. It has
+the same downsides the redirect fixes for `index.html` — `.html`-typed body some fetch tools mangle,
+and an HTTP 404 status some tools refuse to read the body of — so it's a fallback, not the primary
+path.
+
+`index.html`, `404.html`, and `create-pantoken-app.md` are generated from
 [`ai/pantoken-ai/skills/create-pantoken-app/SKILL.md`](https://github.com/thedannywahl/pantoken/blob/main/ai/pantoken-ai/skills/create-pantoken-app/SKILL.md)
 in the `pantoken` repo — don't hand-edit them here. To publish an update, in the `pantoken` repo:
 
