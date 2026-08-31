@@ -41,7 +41,7 @@ in the current project. Work through these steps.
   own interactive prompts:
 
   ```sh
-  npx pantoken-ai scaffold <platform> --dir <dir> --yes
+  npx @pantoken/ai scaffold <platform> --dir <dir> --yes
   ```
 
   This writes a minimal starter (`package.json`, entry file(s), README) for the chosen platform
