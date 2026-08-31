@@ -1,0 +1,12 @@
+# create-pantoken-app
+
+> Agent skill that scaffolds a new project with [pantoken](https://pantoken.app) (Instructure UI
+> design tokens and icons) already wired in, or adds pantoken to an existing repo. Detects the
+> framework, installs the right `@pantoken/*` packages, and wires the token CSS.
+
+- [SKILL.md](https://create.pantoken.app/SKILL.md): the canonical skill file — install via `npx @pantoken/ai scaffold`, or point an agent at this URL directly.
+
+## Related
+
+- [pantoken.app/llms.txt](https://pantoken.app/llms.txt): the full pantoken documentation index.
+- [pantoken.app](https://pantoken.app): pantoken documentation and package guides.

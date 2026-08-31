@@ -1,0 +1,26 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://create.pantoken.app/",
+      "service-doc": [
+        {
+          "href": "https://create.pantoken.app/SKILL.md",
+          "type": "text/markdown",
+          "title": "create-pantoken-app agent skill"
+        }
+      ],
+      "alternate": [
+        {
+          "href": "https://create.pantoken.app/llms.txt",
+          "type": "text/plain",
+          "title": "LLM-friendly documentation index"
+        },
+        {
+          "href": "https://pantoken.app/llms.txt",
+          "type": "text/plain",
+          "title": "pantoken documentation index"
+        }
+      ]
+    }
+  ]
+}
