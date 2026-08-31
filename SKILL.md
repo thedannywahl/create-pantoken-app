@@ -154,7 +154,7 @@ For native / CMS targets, no install — run the CLI (step 5).
 ## 5. Native / other ecosystems
 
 ```sh
-npx pantoken generate <swift|android|compose|flutter|rust|wordpress|vanilla|drupal|jekyll|hugo> --out <dir> [--icons a,b] [--theme rebrand]
+npx @pantoken/cli generate <swift|android|compose|flutter|rust|wordpress|vanilla|drupal|jekyll|hugo> --out <dir> [--icons a,b] [--theme rebrand]
 ```
 
 Substitute `pnpm dlx`, `yarn dlx`, `bunx`, or `deno run npm:` for `npx` per the package manager detected in step 1.
