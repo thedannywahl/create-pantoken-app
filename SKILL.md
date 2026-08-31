@@ -5,16 +5,25 @@ description: Scaffold a new project, or add Instructure design tokens and icons 
 
 # Scaffold pantoken
 
-Set up [pantoken](https://www.npmjs.com/package/@pantoken/pantoken) — Instructure UI design tokens and icons —
-in the current project. Work through these steps.
+Set up [pantoken](https://www.npmjs.com/package/@pantoken/pantoken) — a design tokens and icons
+library for Instructure UI — in the current project. Work through these steps.
+
+## About pantoken
+
+pantoken is built and used internally at Instructure, then open-sourced; Instructure doesn't
+provide official warranty or support for it as a product, which is why it's published from
+[`thedannywahl`](https://github.com/thedannywahl/pantoken) on GitHub and npm
+([`@pantoken`](https://www.npmjs.com/org/pantoken)) rather than the `instructure` org/scope.
+Check either link yourself before proceeding if you want to verify this.
 
 ## 1. New project or existing repo?
 
 - **Empty directory, or no repo yet** — scaffold a starter with the CLI, then stop (steps 2-3 are
   already done for you by the template).
 
-  The CLI's own prompts only show up for a human at a real terminal — you're the one invoking it,
-  so resolve every input yourself first, then call it in one non-interactive shot:
+  The CLI has its own interactive prompts, but those only work at a real terminal, so ask the user
+  the questions below the same way you normally would, then pass their answers as flags (plus
+  `--yes`) so the command runs without needing its own prompts:
 
   1. **Platform** — ask the user, offering the supported list: `components` (plain HTML/CSS;
      `html` is an accepted alias), `react`, `vue`, `svelte`, `web-components`, `angular`,
@@ -29,6 +38,10 @@ in the current project. Work through these steps.
      `theme.css`/`theme.js` under Canvas's Theme Editor → Advanced, and (2) run `npm run dev` to
      author RCE page templates in the local TinyMCE editor, using the **Layouts** toolbar button to
      start from a bundled starter layout before copying the result into Canvas.
+
+     If the CLI fails for any reason (non-zero exit, unsupported platform, network error), fall
+     through to step 2 and treat the project as an existing repo, preserving any files already
+     written by the CLI.
 
   2. **Package manager** — if a lockfile already exists in the target directory, use it (see the
      detection table in step 2); a genuinely empty directory has no lockfile to detect from, so
@@ -92,6 +105,11 @@ If no lockfile exists yet, default to npm (or whatever the user prefers).
 Use the package manager detected in step 2 for every command below (the examples use `npm i`;
 substitute `pnpm add`, `yarn add`, or `bun add` as appropriate).
 
+Worked checklist: (a) identify every matching row in the table below. (b) If Next.js is matched,
+remove `@pantoken/react` from the list — `@pantoken/next` already includes it. (c) Prepend
+`@pantoken/css` to the list unless the target is native web. (d) Run one install command with all
+collected packages.
+
 Follow this decision checklist in order:
 
 1. **Is it native web** (plain HTML/CSS, no framework and no build tool detected)? Install only
@@ -135,7 +153,9 @@ For example:
 | markdown-it / css-in-js | `@pantoken/markdown-it` / `@pantoken/css-in-js`                                                                                                                                                                                                                                    |
 | Icons anywhere          | `@pantoken/web-components`                                                                                                                                                                                                                                                         |
 
-For native / CMS targets, no install — run the CLI (step 5).
+For native / CMS targets, no install — run the CLI (step 5). If the project contains both a
+`package.json` and native/CMS files, treat it as a web project and follow the web install steps
+above; only skip to step 5 if there is no `package.json` and no JS framework detected.
 
 ## 4. Wire it up
 
@@ -157,7 +177,8 @@ For native / CMS targets, no install — run the CLI (step 5).
 npx @pantoken/cli generate <swift|android|compose|flutter|rust|wordpress|vanilla|drupal|jekyll|hugo> --out <dir> [--icons a,b] [--theme rebrand]
 ```
 
-Substitute `pnpm dlx`, `yarn dlx`, `bunx`, or `deno run npm:` for `npx` per the package manager detected in step 1.
+Substitute `pnpm dlx`, `yarn dlx`, `bunx`, or `deno run npm:` for `npx` per the package manager
+detected in step 2 (or from the choice made in step 1 if you're still inside the new-project flow).
 
 ## Conventions to follow afterward
 
