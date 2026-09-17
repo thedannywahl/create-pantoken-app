@@ -13,7 +13,7 @@ and an HTTP 404 status some tools refuse to read the body of — so it's a fallb
 path.
 
 `SKILL.md`, `index.html`, and `404.html` are generated from
-[`ai/pantoken-ai/skills/create-pantoken-app/SKILL.md`](https://github.com/thedannywahl/pantoken/blob/main/ai/pantoken-ai/skills/create-pantoken-app/SKILL.md)
+[`packages/scaffold/skills/create-pantoken-app/SKILL.md`](https://github.com/thedannywahl/pantoken/blob/main/packages/scaffold/skills/create-pantoken-app/SKILL.md)
 in the `pantoken` repo — don't hand-edit them here. `llms.txt` and `.well-known/api-catalog` are
 hand-maintained in this submodule instead: `llms.txt` is an agent-legible index of this site (the
 [`llms.txt`](https://llmstxt.org/) convention), and `.well-known/api-catalog` is an
