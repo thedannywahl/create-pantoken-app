@@ -5,7 +5,7 @@ stub (meta-refresh + `location.replace`) pointing at `/SKILL.md`, the canonical 
 plain-text `.html` root previously confused agent fetch tools that ran the page through an
 HTML-to-text conversion pass and mangled the embedded markdown.
 
-`404.html` is a third, raw copy of the skill: GitHub Pages serves it for any unmatched path
+`404.html` is a third, raw copy of the skill: the static host serves it for any unmatched path
 (including `/`, since there's no Jekyll `permalink` processing — this repo is `.nojekyll`), so a
 plain non-rendering `GET /` still gets the content immediately instead of the redirect stub. It has
 the same downsides the redirect fixes for `index.html` — `.html`-typed body some fetch tools mangle,
@@ -27,4 +27,4 @@ git commit -am "sync create-pantoken-app skill"
 git push
 ```
 
-GitHub Pages redeploys automatically on push to `main`.
+The site redeploys automatically on push to `main`.
